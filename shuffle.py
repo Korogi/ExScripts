@@ -17,10 +17,8 @@ def shuffle(lst):
         # m += 1
 
 
-def unshuffle(lst):
-    n = (len(lst)+1) // 2
+def unshuffle(lst, m):
     l, r = [], []
-    m = 3
 
     for element in lst:
         if element <= m:
@@ -34,17 +32,14 @@ def unshuffle(lst):
 def main():
     # lst = [4, 3, 2, 7, 9, 1, 8, 5, 6]
 
-    lst = [1, 2, 3, 4, 6, 7]
-    shuffle(lst)
-    print(unshuffle(lst))
-
-    for _ in range(10000):
-        lst = [1, 2, 3, 4, 6, 7]
+    for _ in range(1000):
+        lst = [1, 2, 3, 4, 6, 7, 7]
+        m = lst[((len(lst) + 1) // 2) - 1]
         shuffle(lst)
-        if unshuffle(lst) == [1, 2, 3, 4, 6, 7]:
-            continue
-        else:
-            print(False)
+        unshuffled = unshuffle(lst, m)
+
+        if unshuffled != [1, 2, 3, 4, 6, 7, 7]:
+            print(False, unshuffled)
 
 
 if __name__ == '__main__':
