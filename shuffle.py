@@ -19,12 +19,21 @@ def shuffle(lst):
 
 def unshuffle(lst, m):
     l, r = [], []
+    multiple_m = 0
 
     for element in lst:
-        if element <= m:
+        if element == m:
+            multiple_m += 1
+            continue
+        if element < m:
             l.append(element)
         else:
             r.append(element)
+
+    while len(l) < (len(lst) + 1) // 2:
+        l.append(m)
+        multiple_m -= 1
+    r = [m] * multiple_m + r
 
     return l + r
 
@@ -33,13 +42,13 @@ def main():
     # lst = [4, 3, 2, 7, 9, 1, 8, 5, 6]
 
     for _ in range(1000):
-        lst = [1, 2, 3, 4, 6, 7, 7]
+        lst = [5, 5, 6, 6, 7]
         m = lst[((len(lst) + 1) // 2) - 1]
         shuffle(lst)
         unshuffled = unshuffle(lst, m)
 
-        if unshuffled != [1, 2, 3, 4, 6, 7, 7]:
-            print(False, unshuffled)
+        if unshuffled != [5, 5, 6, 6, 7]:
+            print(False, lst, unshuffled)
 
 
 if __name__ == '__main__':
