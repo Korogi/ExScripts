@@ -1,0 +1,16 @@
+package de.uniwue.gdp.diffcalc.base;
+
+import de.uniwue.gdp.diffcalc.Function;
+
+public class $ implements Function {
+
+    @Override
+    public double evaluate(double x) {
+		return 0;
+	}
+
+	@Override 
+	public Function differentiate() {
+		return null;
+	}
+}
