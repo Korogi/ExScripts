@@ -42,12 +42,13 @@ def main():
     # lst = [4, 3, 2, 7, 9, 1, 8, 5, 6]
 
     for _ in range(1000):
-        lst = [5, 5, 6, 6, 7]
+        lst = [1, 2, 3, 4, 5]
         m = lst[((len(lst) + 1) // 2) - 1]
         shuffle(lst)
+        print(lst, m)
         unshuffled = unshuffle(lst, m)
 
-        if unshuffled != [5, 5, 6, 6, 7]:
+        if unshuffled != [1, 2, 3, 4, 5]:
             print(False, lst, unshuffled)
 
 

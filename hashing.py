@@ -11,7 +11,7 @@ def probe(lst, h):
 
         while probed[int(h(element, i))][0] != 0:
             i += 1
-
+            print(h(element, i))
         probed[int(h(element, i))] = (element, i)
 
     return sum([probed[i][1] for i in range(len(probed))]), probed

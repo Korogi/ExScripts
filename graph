@@ -1,0 +1,14 @@
+t, u, v, w, x, y, z
+t, 1, u
+u, 1, w
+u, 3, z
+u, 2, x
+v, 1, u
+u, 4, x
+w, 1, z
+w, 3, t
+x, 6, w
+x, 10, z
+x, 1, y
+y, 2, v
+z, 7, y
